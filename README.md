@@ -1,109 +1,145 @@
-PHONE_NUMBER (sem +), WHATSAPP_LINK (ex: https://wa.me/55NUMERO), ADDRESS_TEXT, MAP_IFRAME_SRC (Google Maps embed URL), LOGO_SRC (URL da imagem).
-  2) Salve como arquivo .html e abra no navegador do celular, ou hospede no GitHub Pages / Netlify / Vercel.
-  3) Para publicar no Google Sites ou Canva, copie o conteúdo necessário (imagens e textos) para os editores dessas plataformas.
--->
-
-<!doctype html>
+        </div>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pizza Testes - Pizzaria</title>
-  <meta name="description" content="Pizzaria Pizza Testes — Delivery, Retirada e Atendimento no Local">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FashionStore - Sua Loja de Roupas</title>
   <style>
-    :root{--accent:#d84315;--bg:#fff;--muted:#666}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111}
-    header{background:linear-gradient(90deg, rgba(216,67,21,0.95), rgba(231,94,55,0.9)); color:#fff; padding:22px 16px}
-    .container{max-width:980px; margin:0 auto; padding:16px}
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand img{width:56px; height:56px; border-radius:8px; object-fit:cover}
-    .brand h1{font-size:20px; margin:0}
-    .subtitle{font-size:13px; opacity:0.95}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-    nav{display:flex; gap:8px; margin-top:12px; overflow:auto}
-    nav a{background:rgba(255,255,255,0.12); padding:8px 12px; border-radius:999px; color:#fff; text-decoration:none; font-size:13px}
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+    }
 
-    .hero{display:flex; gap:12px; align-items:center; margin-top:18px}
-    .hero .left{flex:1}
-    .hero h2{margin:0 0 8px 0}
-    .hero p{margin:0 0 12px 0; color:var(--muted)}
-    .cta{display:inline-block; background:#fff; color:var(--accent); padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700}
+    header {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-    .card{background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.06); padding:14px; margin-bottom:14px}
-    h3{margin:0 0 8px 0}
-    .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:8px}
-    .menu-item{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #eee}
-    .price{font-weight:700}
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
 
-    .map{height:200px; border-radius:10px; overflow:hidden}
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      padding: 10px;
+    }
 
-    footer{padding:18px 16px; text-align:center; color:var(--muted); font-size:13px}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-    /* Floating WhatsApp */
-    .wa{position:fixed; right:16px; bottom:16px; z-index:999}
-    .wa a{display:flex; align-items:center; gap:10px; background:linear-gradient(180deg,#25D366,#128C7E); color:#fff; padding:12px 14px; border-radius:999px; text-decoration:none; box-shadow:0 8px 24px rgba(37,211,102,0.2)}
+    nav a:hover {
+      color: #ffcc00;
+    }
 
-    /* Responsive */
-    @media(min-width:700px){
-      .hero{margin-top:30px}
-      .grid{grid-template-columns:repeat(3,1fr)}
+    .banner {
+      background-image: url("https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .banner h2 {
+      font-size: 40px;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .produtos {
+      padding: 50px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .produto {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .produto:hover {
+      transform: translateY(-5px);
+    }
+
+    .produto img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .info h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .info button {
+      background-color: #111;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .info button:hover {
+      background-color: #ffcc00;
+      color: black;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <div class="brand">
-        <img src="LOGO_SRC" alt="Pizza Testes logo">
-        <div>
-          <h1>PIZZA TESTES</h1>
-          <div class="subtitle">Pizza artesanal • Delivery • Retirada • Atendimento no local</div>
-        </div>
-      </div>
-      <nav aria-label="menu">
-        <a href="#cardapio">Cardápio</a>
-        <a href="#promocoes">Promoções</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#local">Local</a>
-      </nav>
-    </div>
+    <h1>FashionStore</h1>
+    <p>Sua Loja de Roupas Online</p>
   </header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="left">
-        <h2>Sua pizza favorita em poucos minutos</h2>
-        <p>Massas frescas, ingredientes selecionados e sabores que conquistam a família inteira. Peça agora pelo WhatsApp.</p>
-        <a class="cta" id="btn-pedir" href="WHATSAPP_LINK">Pedir pelo WhatsApp</a>
-      </div>
-      <div class="right">
-        <div class="card" style="width:210px; text-align:center">
-          <strong>Horário</strong>
-          <div style="margin-top:8px">Seg–Qui: 18h–23h<br>Sex–Sáb: 18h–00h<br>Dom: 17h–23h</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cardapio" class="card">
-      <h3>🍕 Cardápio</h3>
-      <div class="grid">
-        <div>
-          <h4>Tradicionais</h4>
-          <div class="menu-item"><span>Mussarela</span><span class="price">R$ 29,90</span></div>
-          <div class="menu-item"><span>Calabresa</span><span class="price">R$ 29,90</span></div>
-          <div class="menu-item"><span>Frango com Catupiry</span><span class="price">R$ 34,90</span></div>
-          <div class="menu-item"><span>Portuguesa</span><span class="price">R$ 34,90</span></div>
-        </div>
-
-        <div>
-          <h4>Especiais</h4>
-          <div class="menu-item"><span>Quatro Queijos</span><span class="price">R$ 39,90</span></div>
-          <div class="menu-item"><span>Pepperoni</span><span class="price">R$ 39,90</span></div>
-          <div class="menu-item"><span>Bacon Cremoso</span><span class="price">R$ 42,90</span></div>
-          <div class="menu-item"><span>Carne de Sol</span><span class="price">R$ 44,90</span></div>
-        </div>
-
         <div>
           <h4>Doces & Bebidas</h4>
           <div class="menu-item"><span>Brigadeiro</span><span class="price">R$ 24,90</span></div>
